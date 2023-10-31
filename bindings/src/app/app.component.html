@@ -1,0 +1,100 @@
+
+<select [(ngModel)]="themeName">
+  <option value="ocean">Ocean</option>
+  <option value="forest">Forest</option>
+  <option value="cloud">Cloud</option>
+</select><br/>
+
+<!-- Dropdown for text color -->
+<select [(ngModel)]="applyColor">
+  <option value="black">Black</option>
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+</select><br/>
+
+
+<!-- Textbox with dynamic text color -->
+<input type="text" [class]="textColor" placeholder="Enter text here"><br/>
+<input type="text" [style.color]="applyColor" value="Unknown"><br/> <!-- Style binding -->
+
+<b>Set the size</b>&nbsp;&nbsp; <input type="number" min="100" max="500" step="20" [(ngModel)]="size"/><br/>
+<!-- Style binding -->
+ <div [class]="themeName" [style.max-width.px]="size" [style.max-height.px]="size"> <!-- [class] is a syntax for property binding, It takes the value of the theme name as the class. -->
+</div>
+
+<form name="formdata" (submit)="sendData()">
+<!--PROPERTY BINDING-->
+First name<input type="text" name="firstname" [(ngModel)]="this.udata.firstName" (ngModelChange)="checkData()"/><br/>
+<label style="color: red" *ngIf="this.udata.firstName.length==0">First name should not be empty</label>
+Last name<input type="text" name="lastname" [(ngModel)]="this.udata.lastName"/><br/>
+<label style="color: red" *ngIf="this.udata.lastName.length==0">Last name should not be empty</label>
+<input type="checkbox" name="enabledisable" [(ngModel)]="enableDisable"/>Agree to T & C <br/>
+<input type="button" name="savedata" value="Save" (click)="saveData($event)"/>&nbsp;&nbsp;
+<input type="button" value="Reset" [disabled]="!(firstName || lastName)"/>
+<input type="submit" value="Submit Form"/>
+</form>
+
+<b>List of users<br /></b>
+<!-- *ngFor is the directives. similar to for of loop -->
+<li *ngFor="let user of usersList">{{user.firstName}} &nbsp; &nbsp; {{user.lastName}}</li>
+<b>List of users</b>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of usersList">
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<form>
+  Company name<input type="text" name="company" [(ngModel)]="this.udata.company"/><br />
+  Customer location<input type="text" name="location"  [(ngModel)]="this.udata.location"/><br />
+</form>
+ 
+<!-- <ng-container *ngIf="this.udata.company.length !=0 &&
+this.udata.location.length !=0; then Correct else notCorrect">
+</ng-container>
+
+<ng-template #Correct>
+<div>
+  <b>Inputs are correct</b>
+</div>
+</ng-template>
+
+<ng-template #notCorrect>
+<div>
+  <b>Location and company are mandatory</b>
+</div>
+</ng-template> -->
+
+<!-- ng-templte is the angular tag, which is like sub view -->
+<ng-template [ngIf]="this.udata.company.length!=0 && this.udata.location.length!=0" [ngIfElse]="NotCorrect">
+    <b>Inputs are correct</b>
+</ng-template>
+  
+<ng-template #NotCorrect>
+<b>Location and company are mandatory</b>
+</ng-template>
+<br />
+
+<select [(ngModel)]="this.stateName">
+    <option value="TN">Tamil Nadu</option>
+    <option value="AP">Andhra Pradesh</option>
+    <option value="KA">Karnataka</option>
+    <option value="UP">Uttar Pradesh</option>
+</select>
+
+<div [ngSwitch]="this.stateName">
+  <ul *ngSwitchCase="'TN'"><li>Chennai</li><li>Andhra</li><li>Coimbatore</li></ul>
+  <ul *ngSwitchCase="'AP'"><li>Vijayawada</li><li>Visakhapatnam</li><li>Tirupati</li></ul>
+  <ul *ngSwitchCase="'KA'"><li>Bengaluru</li><li>Mangaluru</li><li>Chitradurga</li></ul>
+  <ul *ngSwitchCase="'UP'"><li>Chennai</li><li>Andhra</li><li>Coimbatore</li></ul>
+</div>

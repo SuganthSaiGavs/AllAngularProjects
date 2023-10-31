@@ -1,0 +1,22 @@
+First Name{{this.udata.firstName | uppercase}}<br>
+Last Name{{this.udata.lastName | uppercase}}<br>
+{{this.udata.firstName +' '+ this.udata.lastName}}<br>
+First Name{{this.udata.firstName | lowercase}}<br>
+Last Name{{this.udata.lastName | lowercase}}<br>
+Full Name &nbsp;{{this.udata.firstName + this.udata.lastName | slice:4}}<br>
+Full Name &nbsp;{{this.udata.firstName + this.udata.lastName | slice:4:10}}<br>
+
+JoinDate &nbsp;{{this.udata.dateOfJoining | date}}<br>
+FullDate &nbsp;{{this.udata.dateOfJoining | date:'fullDate'}}<br>
+ShortDate &nbsp;{{this.udata.dateOfJoining | date:'shortDate'}}<br>
+
+Full Time {{this.udata.dateOfJoining | date:'fullTime'}}<br />
+Short Time {{this.udata.dateOfJoining | date:'shortTime'}}<br />
+ 
+Date Format {{this.udata.dateOfJoining | date:'medium'}}<br />
+Date Format {{this.udata.dateOfJoining | date:'dd-M-yyyy'}}<br />
+
+Time Format {{this.udata.dateOfJoining | date:'h:m:ss a z'}}<br />
+Currency {{this.udata.salary | currency:'EUR'}}<br />
+
+<router-outlet></router-outlet>

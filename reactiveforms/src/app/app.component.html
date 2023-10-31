@@ -1,0 +1,37 @@
+<!-- Reactive forms make use of a built-in class called FormGroup
+In Reactive forms use FormGroup=>collection of form elements
+In Reactive forms ngModel is not used;instead we use formcontrolname
+-->
+<strong>Enter user's data</strong><br>
+<form [formGroup]="userForm" (ngSubmit)="addUser()">
+  First name: <input type="text" name="firstName" formControlName="firstName" /><br>
+  <div *ngIf="userForm.controls.firstName.invalid && userForm.controls.firstName.touched">
+    <p *ngIf="userForm.controls.firstName.errors.required" style="color: red;">First name is required.</p>
+    <p *ngIf="userForm.controls.firstName.errors.minlength" style="color: red;">First name must be at least 5 characters.</p>
+  </div>
+  Last name: <input type="text" name="lastName" formControlName="lastName"/><br>
+  Join Date: <input type="date" name="joinDate" formControlName="joinDate"/><br>
+  Salary: <input type="number" name="salary" formControlName="salary"/><br>
+  <input type="submit" value="Add user"/>
+</form>
+<br>
+<strong>User Details:</strong>
+<table border="5">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Join Date</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userList">
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.joinDate }}</td>
+      <td>{{ user.salary }}</td>
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>

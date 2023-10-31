@@ -1,0 +1,38 @@
+.ocean{
+    background-color: skyblue;
+    width: 500px;
+    height: 400px;
+    font-family: 'Tahoma' ;
+    color: red;
+}
+
+.forest{
+    background-color: green;
+    width: 500px;
+    height: 400px;
+    font-family: 'Helvetica' ;
+    color: red;
+}
+
+.cloud{
+    background-color: blueviolet;
+    width: 500px;
+    height: 400px;
+    font-family: 'Fantasy' ;
+    color: red;
+}
+
+input.black {
+    color: black;
+    border: 2px solid black;
+  }
+  
+  input.red {
+    color: red;
+    border: 2px solid red;
+  }
+  
+  input.blue {
+    color:blue;
+    border: 2px solid blue;
+  }

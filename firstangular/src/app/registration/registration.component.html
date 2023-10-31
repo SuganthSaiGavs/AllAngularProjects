@@ -1,0 +1,15 @@
+<!-- {{}} it is interpolation
+    One way binding from Model to View
+    [()] it is for Two way Binding.
+ -->
+<b>User Name Mr/Ms {{firstName}}&nbsp;{{lastName}}</b>
+
+ <p>registration Form</p>
+    <!-- ngModel is for the  two-way data binding -->
+    First Name <input type="text"  [(ngModel)]="firstName"/><br>
+    Last Name <input type="text"  [(ngModel)]="lastName"/><br>
+    <input type="submit" value="Save"/>
+
+
+
+

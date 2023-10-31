@@ -1,0 +1,128 @@
+/* Resetting some browser's default styles for consistency */
+body, table, input, button {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('https://via.placeholder.com/1920x1080') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centering vertically */
+    height: 100vh; /* Taking full viewport height */
+    padding: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+nav {
+    margin-bottom: 1px;
+    text-align: center;
+}
+
+.form-container {
+     margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;  /* Fills the entire height of the viewport */
+    width: 100%;    /* Fills the entire width of the viewport */
+}
+
+
+form {
+   
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px; /* Reduced the width of the form */
+}
+
+label {
+    color: #666;
+    font-weight: bold;
+    font-size: 14px; /* Smaller font size for labels */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 7px; /* Reduced padding for a smaller height */
+    margin: 8px 0; /* Reduced margin */
+    border: 1px solid #ddd;
+    border-radius: 13px;
+    background-color: #f4f4f4; /* Specifying a background color for the text box */
+    font-size: 14px; /* Smaller font size for input text */
+}
+
+input[type="submit"], input[type="button"], button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 8px 15px; /* Reduced padding */
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 14px; /* Smaller font size for buttons */
+}
+
+table {
+    margin-top: 20px;
+    width: 80%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centering table content */
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    form, table {
+        width: 100%;
+    }
+
+    body {
+        padding: 10px;
+    }
+}
+
+.table-container {
+    text-align: center; /* This centers inline-block or inline elements */
+    margin-top: -50px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto; 
+    /* The above two properties will center the table horizontally since it's a block-level element */
+}
+
